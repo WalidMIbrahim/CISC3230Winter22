@@ -1,0 +1,34 @@
+/*#first-article a{
+    font-size: 200%;
+}
+
+a{
+    color: yellow;
+}*/
+
+.header{
+    background-image: url('../images/hacker_background.png');
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-size: 800px auto;
+
+    font-family: 'Courier New', Courier, monospace;
+    color: gray;
+}
+
+.header > .title{
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    font-size: 300%;
+    text-align: center;
+}
+
+.menu {
+    position: absolute;
+    right:0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 3rem;
+}
