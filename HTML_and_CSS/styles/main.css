@@ -6,7 +6,21 @@ a{
     color: yellow;
 }*/
 
+body{
+    display: grid;
+    grid-template-rows: 14rem auto 6rem;
+    grid-template-columns: 3fr 3fr 1fr;
+
+    margin: 0;
+
+    font-size: 90%;
+}
+
+/*header*/
 .header{
+    grid-row: 1;
+    grid-column: 1/span 3;
+
     background-image: url('../images/hacker_background.png');
     background-repeat: no-repeat;
     background-color: #000000;
@@ -31,4 +45,99 @@ a{
 .menu li {
     display: inline-block;
     margin-right: 3rem;
+}
+
+.menu li > a {
+    font-family: monospace;
+    color: gray;
+    padding: 1rem;
+    /*border: 1px solid black;
+    margin-right: 2rem;*/
+    border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+.menu li  a:hover{
+    background-color: black;
+}
+
+/*.menu li:nth-child(2n+1){
+    background-color: brown;
+}*/
+
+.subscribe{
+    margin-top: 5rem;
+}
+
+.button{
+       margin-left: auto;
+       text-align: center;
+}
+
+.button > a{
+    font-size:  200%; 
+    font-family: monospace;
+    color: gray;
+    padding: 1rem;
+    text-decoration: none;
+    border: 1px solid black;
+    /*margin-right: 2rem;*/
+    border-radius: 0.5rem;
+}
+
+.button > a:hover{
+    background-color: black;
+}
+
+/*Content section*/
+
+.article{
+    margin: 1rem;
+}
+
+.article > .title {
+    font-size: 200%;
+}
+
+.left {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.right{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.tags{
+    grid-row: 2;
+    grid-column: 3;
+}
+
+/*footer*/
+
+.footer{
+    grid-row: 3;
+    grid-column: 1/span 3;
+}
+
+.footer .contact{
+    float: left;
+    padding: 1rem;
+}
+
+.footer .social{
+    float: right;
+    padding: 1rem;
+}
+
+.footer .social li {
+    display: inline-block;
+}
+
+.footer .social img {
+    width:  2rem;
+    height: auto;
 }
