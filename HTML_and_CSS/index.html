@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Security Coders Blog</title>
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width:700px)" >
 <body>
+  <!--
+    Accessibility (AODA)
+     a. meaningful "alt" text for images
+     b. semantic HTML 
+        - <section> Group multiple related parts
+        - <nav> for navigation bar
+        - <article> social media posts 
+  -->
   <section class="header">
     <div class="title">Security Coders Blog</div>
-    <div class="menu">
+    <nav class="menu">
       <ul>
         <li><a href="#">Blog</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Hire me</a></li>
       </ul>
-    </div>
+    </nav>
     <div class="subscribe">
       <div class="button"><a href="#">Subscribe</a></div>
     </div>
   </section>
-  <section class="aricle left" id="first-article">
+  <section class="article left" id="first-article">
     <div class="title">This Week at DefCon</div>
     <div class="body">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -56,7 +66,7 @@
     <div>
     <div class="social">
       <ul>
-        <li><a href="#"><img src="images/twitter.png" alt="Twitter" /></a></li>
+        <li><a href="#"><img src="images/twitter.png" alt="Twitter Link" /></a></li>
         <li><a href="#"><img src="images/facebook.png" alt="Facebook" /></a></li>
         <li><a href="#"><img src="images/youtube.png" alt="YouTube" /></a></li>
       </ul>

@@ -97,11 +97,15 @@ body{
     margin: 1rem;
 }
 
-.article > .title {
+.article  .title {
     font-size: 200%;
 }
 
-.left {
+.left .right .tags{
+    grid-column: 1;
+}
+
+/*.left {
     grid-row: 2;
     grid-column: 1;
 }
@@ -115,11 +119,11 @@ body{
     grid-row: 2;
     grid-column: 3;
 }
-
+*/
 /*footer*/
 
 .footer{
-    grid-row: 3;
+    /*grid-row: 3;*/
     grid-column: 1/span 3;
 }
 
