@@ -29,6 +29,7 @@ window.onload = function(){
 
     
     };
+    test();
     //local storage: store per device i.e. shared between browser tabs.
     window.localStorage.setItem('DriverExamLocalion', 'Oshawa');
     console.log( 'Driving Exam location is in ' 
@@ -51,7 +52,74 @@ for(var i=0; i<10;i++){
     var x =i;
     //console.log("value of x " + x);
 }
-console.log("add 1 +5 =" + addNumber(1,5));
+
+function fibonacci(n){
+    if((n==0) || (n==1)){
+        return n;
+    }else{
+        return  fibonacci(n-1) +fibonacci(n-2);
+    }
+}
+
+
+function wait (timeToWait = 0){
+    return new Promise( (success, failure) =>{
+        setTimeout(success, timeToWait);
+        console.log("After wait function in wait function");
+    });
+}
+
+async function divideLater(a, b, delay){
+    return new Promise((resolve, reject) => {
+        if (b==0) {
+            reject('Cannot divide by zero');
+        }else {
+            setTimeout( () => {
+                resolve (a/b);
+            }, delay);
+        }
+    });
+}
+
+
+async function test (){
+    /*let promise = wait(5000);
+    promise.then(() =>{
+        console.log("wait() prmoise has been fulfilled");
+    });
+    console.log("promise:" + promise);
+    console.log("After wait function in Test");
+
+    divideLater(15,3,5000).then( result1 => {
+        console.log('15 divide by 3 = ' + result1);
+        
+        divideLater(result1,1,5000).then( result2 => {
+            console.log('pre result divide by 1 = ' + result2);
+        }).catch( (errorMessage) => {
+            console.log("The Third error message is: " + errorMessage);
+        });
+
+    }).catch( (errorMessage) => {
+        console.log("The first error message is: " + errorMessage);
+    });
+    
+    divideLater(5,0,5000).then( result => {
+        console.log('5 divide by 3 = ' + result);
+    }).catch( (errorMessage) => {
+        console.log("The second error message is: " + errorMessage);
+    });*/
+
+    let result1 = await divideLater(150,3,4000);
+    console.log("await result1 = " + result1);
+    let result2 = await divideLater(result1,10,4000);
+    console.log("await result2 = " + result2);
+}
+
+
+
+
+//console.log ("Fibonacci 30" + fibonacci(35));
+console.log("add 1 + 5 =" + addNumber(1,5));
 console.log("value of x after for loop " + x);
 console.log("value of i " + i);
 

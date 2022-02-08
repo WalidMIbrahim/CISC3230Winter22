@@ -1,8 +1,9 @@
 /* CSCI 3230U - JavaScript */
-
+var currentElement;
 window.onload = function() {
    let allPs = document.getElementsByTagName('p');
    select(allPs[0]);
+   console.log(allPs);
 
    resetButton = document.getElementById('resetButton');
    resetButton.onclick = function() {
@@ -90,7 +91,7 @@ window.onload = function() {
    };
 };
 
-var currentElement;
+
 
 function select(element) {
    if (element) {
