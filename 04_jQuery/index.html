@@ -10,8 +10,36 @@
     <title>jQuery</title>
 </head>
 <body>
-    <from method="get">
+    <form method="get">
+        <div class="CountryElement">
+              <select id="country" name="nation">
+                  <option value="CA"> Canada </option>
+                  <option value="US"> USA </option>
+              </select>  
+        </div>
+        <br>
+        <div class="provinceElement">
+            <select id="province" name="province">
 
-    </from>
+            </select>
+        </div>
+        <br>
+        <div class="emailElement">
+            <input type="text" id="email" name="email">
+        </div>
+        <br>
+        <div class="buttonElement">
+            <button id="register">Register</button>
+        </div>
+
+    </form>
+
+    <div id="svg">
+        
+    </div>
+    <svg width="400" height ="200">
+        <circle cx='200' cy="200" r="550" stroke="yellow"
+        stroke-width="6" fill ='blue' />
+    </svg>
 </body>
 </html>
