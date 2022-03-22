@@ -18,7 +18,33 @@
 <script>
 
 export default {
-    name:'AddContacts'
+    name:'AddContacts',
+    data(){
+        return{
+            name: '',
+            phone: '',
+            email: ''
+        };
+    }, 
+    Methods:{
+        addContact(event){
+            // prevent from submiting the page
+            event.preventDefault();
+            console.log("add contact clicked")
+            //collect the data
+            const newContact ={
+                name: this.name,
+                phone: this.phone,
+                email: this.email
+            };
+
+            this.$emit('add-contact', newContact);
+            this.name = '';
+            this.phone = '';
+            this.email ='';
+
+        }
+    }
 }
 </script>
 

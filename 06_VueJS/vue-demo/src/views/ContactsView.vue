@@ -1,7 +1,12 @@
 <template>
-  <div class="contacts">
-    <ContactList :contacts="contactsList" v-on:delete-contact="deleteContact"/>
-    <AddContact />
+  <div  class="contacts">
+    <div v-if="!isLoggedIn" >
+        <H1> Login to access this page. </H1>
+    </div>
+    <div v-if="isLoggedIn">
+      <ContactList :contacts="contactsList" v-on:delete-contact="deleteContact"/>
+      <AddContact v-on:add-contact="insertContact"/>
+    </div>
   </div>
 </template>
 
@@ -10,6 +15,7 @@
 import AddContact from '../components/AddContact.vue'
 import ContactList from '../components/ContactList.vue'
 import axios   from 'axios'
+import auth from "../js/auth"
 
 export default {
   name: 'ContactsView',
@@ -19,6 +25,7 @@ export default {
   data(){
       return{
           contactsList:[],
+          isLoggedIn: auth.isLoggedIn()
       };
   },
   created:function(){
@@ -35,8 +42,9 @@ export default {
            .catch(error=> console.log(error))
       },
       insertContact(newContact){
+          console.log("insert function called");
           axios.post('https://jsonplaceholder.typicode.com/users', newContact)
-          .then(response => this.contactsList =  [response.data] )
+          .then(response => this.contactsList = [response.data] )
           .catch(error=> console.log(error))
       }
   }
