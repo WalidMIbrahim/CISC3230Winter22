@@ -1,6 +1,7 @@
 <template>
     <div>
         <router-link to="/"> Home </router-link> |
+        <router-link to="contacts"> Contacts </router-link> |
         <router-link to="about"> About </router-link> |
         <router-link v-if="!isLoggedIn" to="login"> Login </router-link>
         <a  v-if="isLoggedIn" v-on:click="logout"> Logout </a>
