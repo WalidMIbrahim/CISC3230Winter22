@@ -1,6 +1,7 @@
 <template>
     <div class="addContact">
     <form @submit="addContact">
+    
         <label for="name"> Name: </label>
         <input type="text" v-model="name" name="name" placeholder="Full Name"/>
 
@@ -26,7 +27,7 @@ export default {
             email: ''
         };
     }, 
-    Methods:{
+    methods:{
         addContact(event){
             // prevent from submiting the page
             event.preventDefault();

@@ -1,7 +1,7 @@
 <template>
   <div  class="contacts">
     <div v-if="!isLoggedIn" >
-        <H1> Login to access this page. </H1>
+        Login to access this page. 
     </div>
     <div v-if="isLoggedIn">
       <ContactList :contacts="contactsList" v-on:delete-contact="deleteContact"/>
@@ -44,7 +44,7 @@ export default {
       insertContact(newContact){
           console.log("insert function called");
           axios.post('https://jsonplaceholder.typicode.com/users', newContact)
-          .then(response => this.contactsList = [response.data] )
+          .then(response => this.contactsList = [...this.contactsList,response.data] )
           .catch(error=> console.log(error))
       }
   }
