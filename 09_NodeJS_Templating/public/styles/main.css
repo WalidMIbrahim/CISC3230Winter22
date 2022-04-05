@@ -50,6 +50,7 @@
  
  .label {
     grid-column: 1;
+    height: 2rem;
  }
  
  .control {
