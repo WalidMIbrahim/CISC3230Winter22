@@ -1,4 +1,5 @@
 const express = require('express');
+const model = require('./model/model.js');
 let app = express();
 
 app.use(express.static("public"));
@@ -26,7 +27,40 @@ app.get('/', function(request, response){
     });
 });
 
+function reloadStudentData(response){
+    model.Students.find().then(function(studentLists){
+        response.render("studentlist",{
+            title: 'Class List',
+            students: studentLists,
+    
+        });
+    });
+}
+
+app.post('/addStudent', function(request, response){
+    console.log("Add student");
+    let studentData={
+        sid: request.body.sid,
+        firstName: request.body.firstName,
+        lastName: request.body.lastName,
+        gpa: request.body.gpa
+    };
+    let newStudent = new model.Students(studentData);
+    newStudent.save( function(error){
+        if(error){
+            console.error('Unable to add student: ', error);
+        } else{
+            console.log('New student was added successfully');
+            reloadStudentData(response);
+        }
+    });
+
+});
+
 app.get('/listStudent', function(request, response){
+    reloadStudentData(response);
+});  
+    /*
     studentLists =[
         {sid:"1",firstName:"Ammar",lastName:"Hatiy"},
         {sid:"2",firstName:"Samuel",lastName:"Jones"},
@@ -36,7 +70,8 @@ app.get('/listStudent', function(request, response){
         students: studentLists,
 
     });
-});
+    */
+
 
 app.get('/simple', function(req, res){
     res.render('simple',{

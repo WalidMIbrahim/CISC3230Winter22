@@ -13,3 +13,15 @@ block content
                 td= student.sid 
                 td= student.firstName 
                 td=student.lastName
+        
+    form(action="/addStudent", method='post')
+        div
+            input(type="text", name="sid", placeholder="Student ID")
+        div
+            input(type="text", name="firstName", placeholder="Student fName")
+        div
+            input(type="text", name="lastName", placeholder="Student lName")
+        div
+            input(type="text", name="gpa", placeholder="Student GPA")
+        div
+            button Add

@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "^4.17.3",
     "express-session": "^1.17.2",
+    "mongoose": "^6.2.10",
     "pug": "^3.0.2"
   }
 }
