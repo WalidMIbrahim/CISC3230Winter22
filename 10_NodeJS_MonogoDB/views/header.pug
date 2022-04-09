@@ -6,9 +6,15 @@ html
         ul(class="menu")
             li
                 a(href="/") Home
-            li
-                a(href="/login") login
-            li
-                a(href="/listStudent") Student list
+            if (username && username !=='')
+                li
+                    a(href="/listStudent") Student list
+                li 
+                    a(href="/logout") logout
+            else
+                li
+                    a(href="/login") Login
+                li
+                    a(href="/register") Register
 
         block content

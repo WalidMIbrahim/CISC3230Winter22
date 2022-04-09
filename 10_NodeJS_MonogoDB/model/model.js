@@ -25,7 +25,8 @@ let schema = mongoose.Schema;
 let userSchema = new schema({
     username: String,
     email: String,
-    password: String
+    password: String,
+    hashPassword: String,
 },{
     collection: 'users'
 });
@@ -34,7 +35,6 @@ let userSchema = new schema({
 let studentSchema = new schema({
     sid: {
             type: String,
-            validation:[/^1[0-9]{4}$/, 'must be 4 digits and starts with 1'],
             unique: true,
             index: true
         },
@@ -48,7 +48,7 @@ let studentSchema = new schema({
 
 //Link the Database with our objects
 module.exports.User = mongoose.model('users', userSchema);
-module.exports.Students = mongoose.model('students', studentSchema);
+module.exports.Student = mongoose.model('students', studentSchema);
 
 /*
     Database: University

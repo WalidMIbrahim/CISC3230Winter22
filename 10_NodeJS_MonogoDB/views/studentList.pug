@@ -8,13 +8,15 @@ block content
             th SID 
             th First name 
             th last name 
+            th GPA
         each student in students
             tr 
                 td= student.sid 
                 td= student.firstName 
-                td=student.lastName
+                td= student.lastName
+                td= student.gpa
         
-    form(action="/addStudent", method='post')
+    form(action="/addAndUpdateStudent", method='post')
         div
             input(type="text", name="sid", placeholder="Student ID")
         div

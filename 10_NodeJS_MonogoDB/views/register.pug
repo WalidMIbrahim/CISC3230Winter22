@@ -1,0 +1,26 @@
+extend header 
+block content
+    h1= title
+
+    div(class="error")= errorMessage
+
+    form(method="post", action="/register", class="form")
+        label(class="label", for="username") Username: 
+        input(type="text",
+            id="username",
+            name="username",
+            placeholder="username",
+            class="control row1")
+        label(class="label", for="password") Password: 
+        input(type="password",
+            id="password",
+            name="password",
+            placeholder="password",
+            class="control row2")
+        label(class="label", for="email") Email: 
+        input(type="email",
+            id="email",
+            name="email",
+            placeholder="email",
+            class="control row3")
+        button(class="control row4") Register
