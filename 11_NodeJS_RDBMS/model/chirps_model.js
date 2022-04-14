@@ -38,7 +38,7 @@ db.serialize(() =>{
       });
 });
 
-db.parallelize(() => {
+db.serialize(() => {
  
     db.run("INSERT INTO chirps(sender, sentTime, message) VALUES(1, DATETIME('now'), 'fred was here!')")
       .run("INSERT INTO chirps(sender, sentTime, message) VALUES(?, DATETIME('now'), ?)", [2,'sally was also here!'])
@@ -71,16 +71,19 @@ function getAllChirps(callback){
             console.error('Error query database  chirps: ', err);
         }else{
             console.log(chripsData);
+            callback(chripsData);
         } 
     });
 }
 
-function deleteChirp(callback){
-    db.run('DELETE FROM chrips WHERE chripId = ?', id, (err)=>{
+function deleteChirp(id,callback){
+    db.run('DELETE FROM chirps WHERE chirpId = ?', id, (err)=>{
+        console.log(`deleting chirp ${id}`)
         if (err){
             console.error(`Error failed delete for Id ${id}: `, err);
         }else{
-            console.log(chripsData);
+            console.log("Row deleted succuessfully");
+            callback();
         } 
     });
 }
