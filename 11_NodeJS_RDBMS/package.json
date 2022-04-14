@@ -1,0 +1,16 @@
+{
+  "name": "11_nodejs_rdbms",
+  "version": "1.0.0",
+  "description": "RDBMS demo",
+  "main": "rdbms.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2",
+    "sqlite3": "^5.0.2"
+  }
+}
