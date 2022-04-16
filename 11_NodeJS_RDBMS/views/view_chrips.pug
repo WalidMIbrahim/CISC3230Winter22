@@ -1,0 +1,30 @@
+doctype
+html
+    head
+        title= title 
+        link(rel="stylesheet", herf="styles/main.css")
+    body
+        div= tableHeader 
+        table(class="table")
+            tr
+                th Chirp ID
+                th Sender ID
+                th Sent Time 
+                th Message 
+                th Delete 
+            each chirp in chirps 
+                tr 
+                    td= chirp.chirpId
+                    td= chirp.sender
+                    td= chirp.sentTime
+                    td= chirp.message
+                    td 
+                        form(action="/deleteChirp", method="post")
+                            input(type="hidden", name="chirpId", value=chirp.chirpId)
+                            button(type="submit") Delete
+
+        form(action='/addChirp', method="post")
+            input(type="text", name="senderId", placeholder="Sender ID")
+            input(type="text", name="message", placeholder="Message")
+            button(type="submit") Add
+        div= info
